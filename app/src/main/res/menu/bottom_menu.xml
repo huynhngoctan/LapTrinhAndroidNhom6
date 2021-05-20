@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_home" android:title="Home" android:icon="@drawable/ic_launcher_foreground"/>
+    <item android:id="@+id/menu_order" android:title="Đơn hàng" android:icon="@drawable/ic_launcher_foreground"/>
+    <item android:id="@+id/menu_notification" android:title="Thông báo" android:icon="@drawable/ic_launcher_foreground"/>
+    <item android:id="@+id/menu_profile" android:title="Tôi" android:icon="@drawable/ic_launcher_foreground"/>
+</menu>
