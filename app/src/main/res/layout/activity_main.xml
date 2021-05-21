@@ -27,7 +27,7 @@
             app:menu = "@menu/bottom_menu"
             app:itemTextColor="@color/color_navagation"
             app:itemIconTint="@color/color_navagation"
-            android:background="#5CF662"
+            android:background="@color/background_menu"
             />
 
     </RelativeLayout>
