@@ -6,7 +6,7 @@
 
     >
 
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
@@ -41,7 +41,7 @@
                 android:layout_toRightOf="@+id/img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Địa chỉ: "
+                android:text="Địa chỉ giao: "
                 />
             <TextView
                 android:id="@+id/address"
@@ -66,7 +66,7 @@
         </RelativeLayout>
 
 
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 
 </LinearLayout>
