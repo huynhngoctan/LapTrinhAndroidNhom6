@@ -53,6 +53,25 @@
                 android:text="TP.CHM"
                 />
             <TextView
+                android:id="@+id/dt"
+                android:textSize="15dp"
+                android:layout_below="@+id/address"
+                android:layout_toRightOf="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ngày: "
+                />
+            <TextView
+                android:id="@+id/date"
+                android:textSize="16dp"
+                android:layout_below="@+id/address"
+                android:layout_toRightOf="@+id/dt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="TP.CHM"
+                />
+            <TextView
                 android:id="@+id/price"
                 android:textSize="25dp"
                 android:layout_alignParentRight="true"

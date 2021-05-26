@@ -4,8 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
+
+import com.example.laptrinhandroidnhom6.custom.Custom_Adapter_Home;
+import com.example.laptrinhandroidnhom6.model.ItemOfListOrder;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,10 +60,29 @@ public class Home_Fragment extends Fragment {
         }
     }
 
+    ArrayList<ItemOfListOrder> listItem;
+
+    public void createListItemOrder() {
+        listItem = new ArrayList<>();
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "20-02-2021"));
+
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_, container, false);
+        View view = inflater.inflate(R.layout.fragment_home_, container, false);
+        ListView listView = view.findViewById(R.id.listHome);
+        createListItemOrder();
+        Custom_Adapter_Home adapter_home = new Custom_Adapter_Home(listItem,getActivity());
+        listView.setAdapter(adapter_home);
+        return view;
     }
 }

@@ -6,16 +6,26 @@ public class ItemOfListOrder {
     private String img;
     private String addressDelivery;
     private int price;
+    private String date;
 
-    public ItemOfListOrder(int id, String name, String img, String addressDelivery, int price) {
+    public ItemOfListOrder(int id, String name, String img, String addressDelivery, int price, String date) {
         this.id = id;
         this.name = name;
         this.img = img;
         this.addressDelivery = addressDelivery;
         this.price = price;
+        this.date = date;
     }
 
     public ItemOfListOrder() {
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public int getId() {
