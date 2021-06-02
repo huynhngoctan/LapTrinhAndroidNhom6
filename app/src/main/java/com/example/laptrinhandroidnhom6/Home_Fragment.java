@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
@@ -79,7 +80,7 @@ public class Home_Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_, container, false);
-        ListView listView = view.findViewById(R.id.listHome);
+        GridView listView = view.findViewById(R.id.listHome);
         createListItemOrder();
         Custom_Adapter_Home adapter_home = new Custom_Adapter_Home(listItem,getActivity());
         listView.setAdapter(adapter_home);
