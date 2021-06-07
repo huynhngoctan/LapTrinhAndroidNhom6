@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/bg_item_no_selection"
+    android:id="@+id/linearLayout_categories_detail"
+    android:layout_marginRight="15dp"
+    android:layout_marginBottom="10dp">
+
+<de.hdodenhof.circleimageview.CircleImageView
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:src="@drawable/batcom"
+    android:layout_gravity="center_horizontal"
+    android:id="@+id/image_circle_item"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Tấn Cơm Tró    "
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/name_item"/>
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="?android:attr/ratingBarStyleSmall"
+        android:rating="4.5"
+        android:stepSize="0.5"
+        android:progressTint="#ECC131"
+        android:layout_marginTop="5dp"
+        android:id="@+id/rating_bar"/>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="3dp">
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text=" $ 15"
+           android:textStyle="bold"
+           android:textSize="15sp"
+           android:textColor="@color/text_item_selected"
+           android:layout_centerVertical="true"
+           android:id="@+id/item_price"/>
+       <ImageView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+           android:src="@drawable/ic_add_circle"
+           android:id="@+id/button_add_shopping_cart"/>
+   </RelativeLayout>
+
+</LinearLayout>
