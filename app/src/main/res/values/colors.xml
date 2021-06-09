@@ -9,4 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="login_form">#0099ff</color>
     <color name="blue">#33CCFF</color>
+    <color name="background_menu">#0099ff</color>
+    <color name="text_menu">#FBA51A</color>
+    <color name="text_item_selected">#3fc979</color>
 </resources>

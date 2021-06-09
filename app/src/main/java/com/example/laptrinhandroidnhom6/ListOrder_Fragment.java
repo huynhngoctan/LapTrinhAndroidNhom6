@@ -4,8 +4,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.example.laptrinhandroidnhom6.list_order.OrderFagment;
+import com.example.laptrinhandroidnhom6.list_order.PagerAdepterOrder;
+import com.google.android.material.tabs.TabLayout;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -13,7 +20,9 @@ import androidx.fragment.app.Fragment;
  * create an instance of this fragment.
  */
 public class ListOrder_Fragment extends Fragment {
-
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private View view;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -58,6 +67,12 @@ public class ListOrder_Fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list_order_, container, false);
+      view = inflater.inflate(R.layout.fragment_list_order_, container, false);
+        tabLayout = view.findViewById(R.id.taborderList);
+        viewPager = view.findViewById(R.id.listOrderPager);
+        PagerAdepterOrder adepterOrder = new PagerAdepterOrder(getChildFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        viewPager.setAdapter(adepterOrder);
+        tabLayout.setupWithViewPager(viewPager);
+        return view;
     }
 }

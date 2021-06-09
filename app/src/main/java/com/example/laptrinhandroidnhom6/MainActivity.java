@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity  extends AppCompatActivity  {
     private ViewPager viewPager;
     private BottomNavigationView bottomNavigationView;
 
@@ -19,8 +19,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager = findViewById(R.id.view_pager);
+        getSupportActionBar().hide();
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        ViewPagerAdater viewPagerAdater = new ViewPagerAdater(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        ViewPagerAdater viewPagerAdater = new ViewPagerAdater(getSupportFragmentManager());
         viewPager.setAdapter(viewPagerAdater);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -73,4 +74,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
