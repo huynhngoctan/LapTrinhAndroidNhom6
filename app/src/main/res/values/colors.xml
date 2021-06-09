@@ -12,4 +12,8 @@
     <color name="background_menu">#0099ff</color>
     <color name="text_menu">#FBA51A</color>
     <color name="text_item_selected">#3fc979</color>
+    <color name="blue2">#3050EB</color>
+    <color name="grey">#F0EEEE</color>
+    <color name="grey2">#F8F8F8</color>
+    <color name="red2">#FD1403</color>
 </resources>

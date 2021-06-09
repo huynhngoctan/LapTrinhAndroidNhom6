@@ -15,6 +15,9 @@
         <activity android:name=".AItemDetail">
 
         </activity>
+        <activity android:name=".profile.UpdateInfo"></activity>
+        <activity android:name=".profile.ChangePassword"></activity>
+        <activity android:name=".profile.ChangePhone"></activity>
         <activity android:name=".login_logup.LoginActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>

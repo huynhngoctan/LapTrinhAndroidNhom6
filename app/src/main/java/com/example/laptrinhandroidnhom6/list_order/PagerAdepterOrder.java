@@ -6,11 +6,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.laptrinhandroidnhom6.Home_Fragment;
-import com.example.laptrinhandroidnhom6.ListOrder_Fragment;
-import com.example.laptrinhandroidnhom6.Notification_Fragment;
-import com.example.laptrinhandroidnhom6.Profile_Fragment;
-
 public class PagerAdepterOrder extends FragmentStatePagerAdapter {
 
 

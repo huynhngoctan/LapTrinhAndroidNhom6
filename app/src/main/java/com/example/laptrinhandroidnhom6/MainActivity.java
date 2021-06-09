@@ -21,7 +21,7 @@ public class MainActivity  extends AppCompatActivity  {
         viewPager = findViewById(R.id.view_pager);
         getSupportActionBar().hide();
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        ViewPagerAdater viewPagerAdater = new ViewPagerAdater(getSupportFragmentManager());
+        ViewPagerAdater viewPagerAdater = new ViewPagerAdater(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPager.setAdapter(viewPagerAdater);
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
