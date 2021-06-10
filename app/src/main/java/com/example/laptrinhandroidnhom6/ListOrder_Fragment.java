@@ -4,25 +4,21 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.laptrinhandroidnhom6.custom.Custom_AdapterView_Order;
 import com.example.laptrinhandroidnhom6.list_order.OrderFagment;
-import com.example.laptrinhandroidnhom6.list_order.PagerAdepterOrder;
+import com.example.laptrinhandroidnhom6.model.ItemOfListOrder;
 import com.google.android.material.tabs.TabLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ListOrder_Fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
 public class ListOrder_Fragment extends Fragment {
-    private TabLayout tabLayout;
-    private ViewPager viewPager;
-    private View view;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -42,11 +38,11 @@ public class ListOrder_Fragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ListOrder_Fragment.
+     * @return A new instance of fragment OrderFagment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ListOrder_Fragment newInstance(String param1, String param2) {
-        ListOrder_Fragment fragment = new ListOrder_Fragment();
+    public static OrderFagment newInstance(String param1, String param2) {
+        OrderFagment fragment = new OrderFagment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,16 +59,34 @@ public class ListOrder_Fragment extends Fragment {
         }
     }
 
+
+    ArrayList<ItemOfListOrder> listItem;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-      view = inflater.inflate(R.layout.fragment_list_order_, container, false);
-        tabLayout = view.findViewById(R.id.taborderList);
-        viewPager = view.findViewById(R.id.listOrderPager);
-        PagerAdepterOrder adepterOrder = new PagerAdepterOrder(getChildFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        viewPager.setAdapter(adepterOrder);
-        tabLayout.setupWithViewPager(viewPager);
+        View view = inflater.inflate(R.layout.fragment_list_order_, container, false);
+        ListView listView = view.findViewById(R.id.listOrder);
+        createListItemOrder();
+        Custom_AdapterView_Order adapter = new Custom_AdapterView_Order(listItem, getActivity());
+        listView.setAdapter(adapter);
+
+
         return view;
+    }
+
+    //tạo list Items
+    public void createListItemOrder() {
+        listItem = new ArrayList<>();
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
+        listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "Đã giao","20-02-2021"));
     }
 }
