@@ -23,10 +23,10 @@ public class Cart extends AppCompatActivity {
     Button btnOrder;
 
     ArrayList<ItemOfListOrder> listItem;
-
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cart);
         ListView listView = findViewById(R.id.listOrderComing);
         createListItemOrder();
         Custom_Cart adapter = new Custom_Cart(listItem, this);

@@ -43,7 +43,7 @@
                 android:layout_marginLeft="129dp"
                 android:layout_marginTop="29dp"
                 android:layout_toRightOf="@+id/img"
-                android:src="@drawable/ic_baseline_maximize_24" />
+                android:src="@drawable/ic_baseline_remove_circle_24" />
 
             <TextView
                 android:id="@+id/quantity"
@@ -68,7 +68,7 @@
                 android:layout_marginLeft="219dp"
                 android:layout_marginTop="28dp"
                 android:layout_toRightOf="@+id/img"
-                android:src="@drawable/ic_outline_gamepad_24" />
+                android:src="@drawable/ic_add_circle" />
 
             <TextView
                 android:id="@+id/price"

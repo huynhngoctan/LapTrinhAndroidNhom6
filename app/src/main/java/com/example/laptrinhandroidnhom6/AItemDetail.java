@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.laptrinhandroidnhom6.Adapter.AdapterItem;
@@ -19,6 +20,7 @@ public class AItemDetail extends AppCompatActivity implements StartActivity{
     ArrayList<ItemModel> itemModels ;
     AdapterItem adapterItem ;
     ImageView back ;
+    Button btnaddCart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +33,21 @@ public class AItemDetail extends AppCompatActivity implements StartActivity{
         adapterItem = new AdapterItem(this.itemModels , this);
         recyclerView.setAdapter(adapterItem);
         recyclerView.setLayoutManager(new LinearLayoutManager(this , LinearLayoutManager.HORIZONTAL , false));
-
+        btnaddCart = findViewById(R.id.addCart);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AItemDetail.this , MainActivity.class) ;
                 startActivity(intent);
                 finish();
+
+            }
+        });
+        btnaddCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentCart = new Intent(AItemDetail.this,Cart.class);
+                startActivity(intentCart);
 
             }
         });

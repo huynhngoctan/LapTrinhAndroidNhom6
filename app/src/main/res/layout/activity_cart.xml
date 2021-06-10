@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".list_order.OrderFagment">
+    tools:context=".Cart">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -14,22 +14,22 @@
         <ListView
             android:id="@+id/listOrderComing"
             android:layout_width="match_parent"
-            android:layout_height="648dp">
+            android:layout_height="699dp">
 
         </ListView>
     </LinearLayout>
 
     <Button
-        android:backgroundTint="@color/red2"
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        android:layout_margin="10dp"
         android:id="@+id/btncart"
         android:layout_width="125dp"
-        android:layout_height="39dp"
+        android:layout_height="23dp"
         android:layout_gravity="right"
+        android:layout_margin="10dp"
         android:layout_weight="1"
-        android:text="Đặt hàng" />
+        android:backgroundTint="@color/red2"
+        android:text="Đặt hàng"
+        android:textColor="@color/white"
+        android:textSize="15dp" />
 
 
 

@@ -12,13 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LapTrinhAndroidNhom6">
-        <activity android:name=".AItemDetail">
+        <activity android:name=".Cart" />
 
-        </activity>
-        <activity android:name=".profile.UpdateInfo"></activity>
-        <activity android:name=".profile.ChangePassword"></activity>
-        <activity android:name=".profile.ChangePhone"></activity>
-        <activity android:name=".login_logup.LoginActivity"></activity>
+        <activity android:name=".AItemDetail" />
+        <activity android:name=".profile.UpdateInfo" />
+        <activity android:name=".profile.ChangePassword" />
+        <activity android:name=".profile.ChangePhone" />
+        <activity android:name=".login_logup.LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
