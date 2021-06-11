@@ -2,4 +2,6 @@
     <string name="app_name">Nông Lâm Food</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook_app_id">304066704586204</string>
+    <string name="fb_login_protocol_scheme">fb304066704586204</string>
 </resources>

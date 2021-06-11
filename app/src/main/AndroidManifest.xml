@@ -19,6 +19,7 @@
         <activity android:name=".profile.ChangePassword" />
         <activity android:name=".profile.ChangePhone" />
         <activity android:name=".login_logup.LoginActivity" />
+        <activity android:name=".login_logup.TestLogin" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
