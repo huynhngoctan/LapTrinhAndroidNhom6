@@ -6,18 +6,36 @@ public class ItemOfListOrder {
     private String img;
     private String addressDelivery;
     private int price;
+    private String status;
     private String date;
 
-    public ItemOfListOrder(int id, String name, String img, String addressDelivery, int price, String date) {
+    public ItemOfListOrder(int id, String name, String img, String addressDelivery, int price, String status,String date) {
         this.id = id;
         this.name = name;
         this.img = img;
         this.addressDelivery = addressDelivery;
         this.price = price;
         this.date = date;
+        this.status = status;
+    }
+    public ItemOfListOrder(int id, String name, String img, String addressDelivery, int price,String date) {
+        this.id = id;
+        this.name = name;
+        this.img = img;
+        this.addressDelivery = addressDelivery;
+        this.price = price;
+        this.date = date;
+
+    }
+    public ItemOfListOrder() {
     }
 
-    public ItemOfListOrder() {
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getDate() {

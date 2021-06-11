@@ -111,6 +111,7 @@
                 android:padding="5dp"
                 android:layout_gravity="center"/>
             <Button
+                android:id="@+id/addCart"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:text="add to cart"

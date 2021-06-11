@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.laptrinhandroidnhom6.profile.Profile;
+
 public class ViewPagerAdater extends FragmentStatePagerAdapter {
 
 
@@ -17,11 +19,11 @@ public class ViewPagerAdater extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         switch (position){
-            case 0: return  new Home_Fragment();
+            case 0: return  new Home();
             case 1: return  new ListOrder_Fragment();
             case 2: return  new Notification_Fragment();
-            case 3: return  new Profile_Fragment();
-            default: return new Home_Fragment();
+            case 3: return  new Profile();
+            default: return new Home();
         }
     }
 

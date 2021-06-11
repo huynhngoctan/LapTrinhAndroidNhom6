@@ -71,7 +71,7 @@ public class OrderFagment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_order_fagment, container, false);
+        View view = inflater.inflate(R.layout.fragment_list_order_, container, false);
         ListView listView = view.findViewById(R.id.listOrder);
         createListItemOrder();
         Custom_AdapterView_Order adapter = new Custom_AdapterView_Order(listItem, getActivity());
