@@ -2,7 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +20,6 @@
             >
 
             <ImageView
-                android:id="@+id/returnP"
                 android:layout_width="50dp"
                 android:layout_height="42dp"
                 android:src="@drawable/left_back"
@@ -28,7 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Đổi số điện thoại"
+                android:text="Xác thực tài khoản"
                 android:textColor="@color/white"
                 android:textSize="26sp"
                 android:textStyle="bold"
@@ -51,6 +52,37 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chúng tôi đã gửi mã xác thực qua tin nhắn \n vào số điện thoại của bạn"
+                android:textStyle="bold"
+                android:textColor="@color/login_form"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                />
+
+            <TextView
+                android:id="@+id/phonenumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/login_form"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="0dp"
             >
@@ -59,26 +91,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Nhập số điện thoại mới"
-                android:textColor="@color/blue2"
+                android:text="Nhập mã"
+                android:textColor="@color/login_form"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/login_form"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:text="00"
+                android:layout_marginTop="10dp"
+                />
+
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textIL1"
-                android:layout_width="match_parent"
+                android:id="@+id/text369"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 app:errorEnabled="true"
                 app:hintEnabled="false"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 app:counterOverflowTextAppearance="@style/CounterOverFlow"
                 app:counterTextAppearance="@style/CounterText"
                 app:errorTextAppearance="@style/ErrorText2"
+                android:layout_gravity="center"
+                app:boxBackgroundColor="@color/white"
                 >
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/phoneF"
+                    android:id="@+id/code"
                     android:layout_width="300dp"
                     android:layout_height="43dp"
                     android:paddingTop="10dp"
@@ -98,14 +144,38 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/changeP"
+            android:id="@+id/verify"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Xác nhận"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:textColor="@color/white"
             android:backgroundTint="@color/login_form"
+            android:textColor="@color/white"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/login_form"
+            />
+
+        <TextView
+            android:id="@+id/resend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/login_form"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:text="Gửi lại mã"
+            android:layout_marginTop="10dp"
             />
 
     </LinearLayout>

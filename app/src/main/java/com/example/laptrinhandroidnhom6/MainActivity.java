@@ -5,15 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.laptrinhandroidnhom6.profile.Profile;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity  extends AppCompatActivity  {
     private ViewPager viewPager;
     private BottomNavigationView bottomNavigationView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class MainActivity  extends AppCompatActivity  {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
         ViewPagerAdater viewPagerAdater = new ViewPagerAdater(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPager.setAdapter(viewPagerAdater);
+        checkFragment();
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -73,6 +75,16 @@ public class MainActivity  extends AppCompatActivity  {
                 return false;
             }
         });
+    }
+    public void checkFragment(){
+        Intent intent = getIntent() ;
+        String profileFragment = intent.getStringExtra("profile");
+        int number = intent.getIntExtra("number",1) ;
+
+        if(profileFragment!=null){
+            viewPager.setCurrentItem(number);
+            bottomNavigationView.getMenu().findItem(R.id.menu_profile).setChecked(true);
+        }
     }
 
 

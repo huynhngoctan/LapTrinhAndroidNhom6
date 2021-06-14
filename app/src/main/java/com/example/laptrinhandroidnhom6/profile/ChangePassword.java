@@ -5,11 +5,14 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.laptrinhandroidnhom6.R;
+import com.example.laptrinhandroidnhom6.database.UserDB;
+import com.example.laptrinhandroidnhom6.model.User;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -22,12 +25,19 @@ public class ChangePassword extends AppCompatActivity {
     String password;
     boolean check1, check2;
     Button button;
+    User user;
+    UserDB db;
+    ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.change_pass);
         getSupportActionBar().hide();
+
+        db = new UserDB();
+//        user = (User) getIntent().getSerializableExtra("user");
+        user = Profile.getStaticUser();
 
         password = "";
         check1 = false;
@@ -40,13 +50,29 @@ public class ChangePassword extends AppCompatActivity {
         tiet2 = findViewById(R.id.textIET2);
         tiet3 = findViewById(R.id.textIET3);
         button = findViewById(R.id.changeP);
+        iv = findViewById(R.id.returnPW);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                confirm(v);
+                if(checkCurrentPass(til1, tiet1)){
+                    if(confirm(v)){
+                        update();
+                        db.updateUser(user);
+                    }
+                    finish();
+                }
             }
         });
+
+        iv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+//        tiet1.setText(user.getPassword());
 
         checkPassword(til2, tiet2);
         checkRepeatPass(til3, tiet3);
@@ -130,13 +156,31 @@ public class ChangePassword extends AppCompatActivity {
         return hasSpecial.find();
     }
 
-    public void confirm(View v){
+    public boolean confirm(View v){
         if (check1 && check2){
-            Toast.makeText(this, "ok master", Toast.LENGTH_SHORT).show();
+            return true;
         }
         else {
-            Toast.makeText(this, "No fuck you leather man", Toast.LENGTH_SHORT).show();
+            return false;
         }
+    }
+
+    public void update(){
+        String p1 = tiet2.getText().toString();
+        String p2 = tiet3.getText().toString();
+
+        user.setPassword(p1);
+    }
+
+    public boolean checkCurrentPass(TextInputLayout textL, TextInputEditText textE){
+       String s = textE.getText().toString();
+       if(s.equals(user.getPassword())){
+           textL.setError(null);
+           return true;
+       }
+       else
+           textL.setError("Mật khẩu không đúng");
+           return false;
     }
 
 }

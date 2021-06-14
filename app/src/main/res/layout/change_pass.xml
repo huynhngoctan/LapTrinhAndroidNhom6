@@ -12,12 +12,42 @@
         android:orientation="vertical"
         >
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="42dp"
-            android:src="@drawable/left_back"
-            android:onClick="returnBack"
-            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:background="@color/login_form"
+            >
+
+            <ImageView
+                android:id="@+id/returnPW"
+                android:layout_width="50dp"
+                android:layout_height="42dp"
+                android:src="@drawable/left_back"
+                android:onClick="returnBack"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đổi mật khẩu"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="vertical"
+            android:background="@drawable/wave"
+            >
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,28 +56,13 @@
             android:layout_marginTop="10dp"
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thay đổi mật khẩu"
-                android:textStyle="bold"
-                android:textSize="20dp"
-                android:textColor="@color/blue2"
-                android:layout_gravity="center"
-                />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@android:color/black" />
-
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginLeft="0dp"
             >
 
@@ -57,7 +72,7 @@
                 android:text="Mật khẩu hiện tại"
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:textColor="@color/blue2"
+                android:textColor="@color/login_form"
                 android:layout_marginLeft="10dp"
                 />
 
@@ -108,7 +123,7 @@
                 android:text="Mật khẩu mới"
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:textColor="@color/blue2"
+                android:textColor="@color/login_form"
                 android:layout_marginLeft="10dp"
                 />
 
@@ -159,7 +174,7 @@
                 android:text="Nhập lại mật khẩu mới"
                 android:textStyle="bold"
                 android:textSize="20dp"
-                android:textColor="@color/blue2"
+                android:textColor="@color/login_form"
                 android:layout_marginLeft="10dp"
                 />
 
@@ -204,7 +219,8 @@
             android:text="Xác nhận"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:backgroundTint="@color/blue2"
+            android:backgroundTint="@color/login_form"
+            android:textColor="@color/white"
             />
 
     </LinearLayout>

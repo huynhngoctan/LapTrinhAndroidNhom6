@@ -12,13 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LapTrinhAndroidNhom6">
-        <activity android:name=".Cart" />
+        <activity android:name=".AItemDetail">
 
-        <activity android:name=".AItemDetail" />
-        <activity android:name=".profile.UpdateInfo" />
-        <activity android:name=".profile.ChangePassword" />
-        <activity android:name=".profile.ChangePhone" />
-        <activity android:name=".login_logup.LoginActivity" />
+        </activity>
+        <activity android:name=".profile.UpdateInfo"></activity>
+        <activity android:name=".profile.ChangePassword"></activity>
+        <activity android:name=".profile.ChangePhone"></activity>
+        <activity android:name=".login_logup.LoginActivity"></activity>
+        <activity android:name=".profile.VerifyCode"></activity>
+        <activity android:name=".profile.UpdatePhone"></activity>
+        <activity android:name=".profile.Contact"></activity>
+        <activity android:name=".Cart" />
         <activity android:name=".login_logup.TestLogin" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -27,10 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
     </application>
 
 </manifest>
