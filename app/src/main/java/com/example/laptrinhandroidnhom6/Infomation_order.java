@@ -2,6 +2,8 @@ package com.example.laptrinhandroidnhom6;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
@@ -19,8 +21,10 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.laptrinhandroidnhom6.custom.Custom_Adapter_list_infor;
 import com.example.laptrinhandroidnhom6.custom.Custom_Cart;
+import com.example.laptrinhandroidnhom6.database.OrderDetailDB;
 import com.example.laptrinhandroidnhom6.map.MyMapFragment;
 import com.example.laptrinhandroidnhom6.model.ItemOfListOrder;
+import com.example.laptrinhandroidnhom6.model.OrderDetail;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -36,6 +40,8 @@ public class Infomation_order extends Activity implements OnMapReadyCallback {
     TextView txtPrice;
     RadioGroup radioGroup;
     RadioButton raBtnCod,raBtnOnline;
+    Button btnOrder;
+    OrderDetailDB orderDetailDB;
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +55,21 @@ public class Infomation_order extends Activity implements OnMapReadyCallback {
         txtPrice.setText(""+sumPrice());
         //thanh toan
 
+        //dat hang
+        btnOrder = findViewById(R.id.btnOrder);
+        btnOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               try {
+                   orderDetailDB = new OrderDetailDB();
+                   orderDetailDB.insertContact(new OrderDetail("21","kk",20,1));
+                   noficeSuccess();
+               }catch (Exception e){
+                    noficeFail();
+               }
 
+            }
+        });
 
 
 
@@ -101,5 +121,44 @@ public class Infomation_order extends Activity implements OnMapReadyCallback {
             sum += listItem.get(i).getPrice();
         }
         return sum;
+    }
+
+    //thong bao thanh cong
+    public void noficeSuccess(){
+
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+
+        b.setTitle("Thông báo");
+        b.setMessage("Đặt hàng thành công");
+
+        b.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                Intent intentBack = new Intent(Infomation_order.this,MainActivity.class);
+                startActivity(intentBack);
+            }
+        });
+
+
+        AlertDialog al = b.create();
+
+        al.show();
+    }
+    //thong bao thanh cong
+    public void noficeFail(){
+
+        AlertDialog.Builder b = new AlertDialog.Builder(this);
+
+        b.setTitle("Thông báo");
+        b.setMessage("Đặt hàng thất bại");
+
+        b.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                finish();
+            }
+        });
+
+        AlertDialog al = b.create();
+
+        al.show();
     }
 }

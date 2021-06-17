@@ -236,6 +236,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
                 <RadioButton
+                    android:checked="true"
                     android:id="@+id/paymentCod"
                     android:layout_marginLeft="30dp"
                     android:text="Thanh toán trực tiếp"
@@ -243,14 +244,14 @@
                     android:layout_height="wrap_content">
                 </RadioButton>
 
+                <RadioButton
+                    android:id="@+id/paymentOnline"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Thanh toán online"></RadioButton>
             </RadioGroup>
 
-            <RadioButton
-                android:id="@+id/paymentOnline"
-                android:layout_marginLeft="40dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Thanh toán online"></RadioButton>
         </LinearLayout>
         <LinearLayout
             android:layout_height="wrap_content"
