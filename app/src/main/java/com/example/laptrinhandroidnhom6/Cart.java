@@ -1,5 +1,6 @@
 package com.example.laptrinhandroidnhom6;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +36,9 @@ public class Cart extends AppCompatActivity {
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                btnOrder.setText("kkk");
+                //
+                Intent intent = new Intent(Cart.this,Infomation_order.class);
+                startActivity(intent);
             }
         });
     }

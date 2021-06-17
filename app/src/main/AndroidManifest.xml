@@ -4,6 +4,10 @@
     package="com.example.laptrinhandroidnhom6">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!--cap quyen vi tri -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,8 +16,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LapTrinhAndroidNhom6">
-        <activity android:name=".AItemDetail">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key"/>
 
+
+        <activity android:name=".AItemDetail">
         </activity>
         <activity android:name=".profile.UpdateInfo"></activity>
         <activity android:name=".profile.ChangePassword"></activity>
@@ -22,6 +33,7 @@
         <activity android:name=".profile.VerifyCode"></activity>
         <activity android:name=".profile.UpdatePhone"></activity>
         <activity android:name=".profile.Contact"></activity>
+        <activity android:name=".Infomation_order"></activity>
         <activity android:name=".Cart" />
         <activity android:name=".login_logup.TestLogin" />
         <activity android:name=".MainActivity">
@@ -31,6 +43,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+
+
+
     </application>
 
 </manifest>

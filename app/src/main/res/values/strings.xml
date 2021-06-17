@@ -4,4 +4,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="facebook_app_id">304066704586204</string>
     <string name="fb_login_protocol_scheme">fb304066704586204</string>
+    <string name="map_key">AIzaSyCHCa8Bap2OT3lB7ykixsc2XOWnjyUPF6I</string>
 </resources>
