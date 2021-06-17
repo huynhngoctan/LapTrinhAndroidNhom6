@@ -1,292 +1,293 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
 
     <LinearLayout
-        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
 
         <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="90dp"
+            android:layout_width="match_parent"
             android:orientation="vertical"
-            android:background="@color/login_form"
-            >
+            android:background="@color/login_form">
 
-            <ImageView
-                android:id="@+id/returnPU"
-                android:layout_width="50dp"
+            <ImageButton
                 android:layout_height="42dp"
+                android:layout_width="50dp"
+                app:tint="@color/white"
                 android:src="@drawable/left_back"
                 android:onClick="returnBack"
-                app:tint="@color/white" />
+                android:id="@+id/btnReturn" />
 
             <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="Xác nhận đơn hàng"
-                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
                 android:textSize="26sp"
-                android:textStyle="bold" />
+                android:textColor="@color/white"
+                android:text="Xác nhận đơn hàng"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center" />
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:orientation="vertical"
 
-            >
+        <LinearLayout
+            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical">
 
             <fragment
-                android:id="@+id/mymap"
-                android:name="com.google.android.gms.maps.MapFragment"
+                android:layout_height="200dp"
                 android:layout_width="match_parent"
-                android:layout_height="200dp" />
+                android:id="@+id/mymap"
+                android:name="com.google.android.gms.maps.MapFragment" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/login_form"
+                    android:text="Tên"
+                    android:layout_marginLeft="10dp" />
+
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/txtName"
+                    android:textStyle="italic"
+                    android:textColor="@color/grey3"
+                    android:text="Boy Next Door"
+                    android:layout_marginLeft="6dp"
+                    android:imeOptions="flagNoExtractUi"
+                    android:editable="false" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/login_form"
+                    android:text="Số điện thoại"
+                    android:layout_marginLeft="10dp" />
+
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/txtPhone"
+                    android:textStyle="italic"
+                    android:textColor="@color/grey3"
+                    android:text="Boy Next Door"
+                    android:layout_marginLeft="6dp"
+                    android:imeOptions="flagNoExtractUi"
+                    android:editable="false" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/login_form"
+                    android:text="Họ Tên"
+                    android:layout_marginLeft="10dp" />
+
+                <EditText
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/name"
+                    android:text="Boy Next Door"
+                    android:layout_marginLeft="6dp"
+                    android:imeOptions="flagNoExtractUi" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp">
+
+                <View
+                    android:layout_height="0.9dp"
+                    android:layout_width="match_parent"
+                    android:background="@android:color/black"
+                    android:layout_marginLeft="10dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/login_form"
+                    android:text="Email"
+                    android:layout_marginLeft="10dp" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_height="43dp"
+                    android:layout_width="match_parent"
+                    android:id="@+id/textIET"
+                    android:textSize="18sp"
+                    android:text="DeepDarkFantasy@DungeonMaster.com"
+                    android:imeOptions="flagNoExtractUi"
+                    android:paddingBottom="10dp"
+                    android:paddingEnd="0dp"
+                    android:paddingTop="10dp"
+                    android:paddingStart="3dp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/login_form"
+                    android:text="Danh sách sản phẩm"
+                    android:layout_marginLeft="10dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="350dp"
+                android:layout_height="200dp">
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/listViewOrder">
+
+                </ListView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"></LinearLayout>
+
         </LinearLayout>
 
         <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_marginTop="10dp"
-            >
+            android:layout_height="wrap_content">
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <RadioButton
+                    android:id="@+id/paymentCod"
+                    android:layout_marginLeft="30dp"
+                    android:text="Thanh toán trực tiếp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </RadioButton>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                >
+            </RadioGroup>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tên đăng nhập"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:textColor="@color/login_form"
-                    android:layout_marginLeft="10dp"
-                    />
+            <RadioButton
+                android:id="@+id/paymentOnline"
+                android:layout_marginLeft="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thanh toán online"></RadioButton>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Boy Next Door"
-                    android:layout_marginLeft="6dp"
-                    android:imeOptions="flagNoExtractUi"
-                    android:editable="false"
-                    android:textColor="@color/grey3"
-                    android:textStyle="italic"
-                    />
+            <TextView
+                android:layout_height="55dp"
+                android:layout_width="83dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/login_form"
+                android:text="Tổng:"
+                android:layout_marginLeft="10dp" />
 
-            </LinearLayout>
+            <TextView
+                android:layout_height="55dp"
+                android:layout_width="83dp"
+                android:id="@+id/sumPrice"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/red2"
+                android:text="2000"
+                android:layout_marginLeft="-30dp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Số điện thoại"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:textColor="@color/login_form"
-                    android:layout_marginLeft="10dp"
-                    />
-
-                <EditText
-                    android:id="@+id/phoneU"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Boy Next Door"
-                    android:layout_marginLeft="6dp"
-                    android:imeOptions="flagNoExtractUi"
-                    android:editable="false"
-                    android:textColor="@color/grey3"
-                    android:textStyle="italic"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Họ Tên"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:textColor="@color/login_form"
-                    android:layout_marginLeft="10dp"
-                    />
-
-                <EditText
-                    android:id="@+id/name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Boy Next Door"
-                    android:layout_marginLeft="6dp"
-                    android:imeOptions="flagNoExtractUi"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Năm sinh"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:textColor="@color/login_form"
-                    android:layout_marginLeft="10dp"
-                    />
-
-                <Spinner
-                    android:id="@+id/spinerYear"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.9dp"
-                    android:background="@android:color/black"
-                    android:layout_marginLeft="10dp"
-                    />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Email"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:textColor="@color/login_form"
-                    android:layout_marginLeft="10dp"
-                    />
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textIL"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:errorEnabled="true"
-                    app:hintEnabled="false"
-                    android:layout_marginLeft="7dp"
-                    app:counterEnabled="true"
-                    app:counterMaxLength="35"
-                    app:counterOverflowTextAppearance="@style/CounterOverFlow"
-                    app:counterTextAppearance="@style/CounterText"
-                    app:errorTextAppearance="@style/ErrorText"
-                    >
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textIET"
-                        android:layout_width="match_parent"
-                        android:layout_height="43dp"
-                        android:paddingTop="10dp"
-                        android:paddingStart="3dp"
-                        android:paddingEnd="0dp"
-                        android:paddingBottom="10dp"
-                        android:text="DeepDarkFantasy@DungeonMaster.com"
-                        android:textSize="18sp"
-                        android:imeOptions="flagNoExtractUi"
-                        />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                >
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Giới tính"
-                    android:textStyle="bold"
-                    android:textSize="20dp"
-                    android:textColor="@color/login_form"
-                    android:layout_marginLeft="10dp"
-                    />
-
-                <Spinner
-                    android:id="@+id/spinerGender"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:background="@android:color/black"
-                    android:layout_marginLeft="10dp"
-                    />
-
-            </LinearLayout>
-
-
-
+            <Button
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/btnOrder"
+                android:textColor="@color/white"
+                android:text="Đặt hàng"
+                android:layout_marginTop="30dp"
+                android:layout_gravity="right"
+                android:layout_marginLeft="150dp"
+                android:backgroundTint="@color/red2" />
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/updateButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cập nhật"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/login_form"
-            android:textColor="@color/white"
-            />
-
 
     </LinearLayout>
 
