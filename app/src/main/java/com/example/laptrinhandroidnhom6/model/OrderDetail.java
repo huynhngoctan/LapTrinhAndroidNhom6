@@ -1,19 +1,28 @@
 package com.example.laptrinhandroidnhom6.model;
 
 public class OrderDetail {
+    String idOrderDetail;
     String idOrder;
     String idFood;
-    int priceFood;
+
     int quantity;
 
-    public OrderDetail(String idOrder, String idFood, int priceFood, int quantity) {
+    public OrderDetail(String idOrderDetail, String idOrder, String idFood, int quantity) {
+        this.idOrderDetail = idOrderDetail;
         this.idOrder = idOrder;
         this.idFood = idFood;
-        this.priceFood = priceFood;
         this.quantity = quantity;
     }
 
     public OrderDetail() {
+    }
+
+    public String getIdOrderDetail() {
+        return idOrderDetail;
+    }
+
+    public void setIdOrderDetail(String idOrderDetail) {
+        this.idOrderDetail = idOrderDetail;
     }
 
     public String getIdOrder() {
@@ -30,14 +39,6 @@ public class OrderDetail {
 
     public void setIdFood(String idFood) {
         this.idFood = idFood;
-    }
-
-    public int getPriceFood() {
-        return priceFood;
-    }
-
-    public void setPriceFood(int priceFood) {
-        this.priceFood = priceFood;
     }
 
     public int getQuantity() {

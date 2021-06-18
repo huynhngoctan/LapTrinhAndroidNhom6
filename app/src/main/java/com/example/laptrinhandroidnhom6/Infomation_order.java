@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -24,7 +25,9 @@ import com.example.laptrinhandroidnhom6.custom.Custom_Cart;
 import com.example.laptrinhandroidnhom6.database.OrderDetailDB;
 import com.example.laptrinhandroidnhom6.map.MyMapFragment;
 import com.example.laptrinhandroidnhom6.model.ItemOfListOrder;
+import com.example.laptrinhandroidnhom6.model.Order;
 import com.example.laptrinhandroidnhom6.model.OrderDetail;
+import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -35,14 +38,21 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 
 public class Infomation_order extends Activity implements OnMapReadyCallback {
+    //map
+    Location currentLocation;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    private static final  int REQUEST_CODE = 101;
+    //
     Button btnBack;
     ArrayList<ItemOfListOrder> listItem;
     TextView txtPrice;
     RadioGroup radioGroup;
-    RadioButton raBtnCod,raBtnOnline;
+    RadioButton raBtnCod, raBtnOnline;
     Button btnOrder;
     OrderDetailDB orderDetailDB;
-    @SuppressLint("WrongViewCast")
+    String payment = "";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,25 +62,35 @@ public class Infomation_order extends Activity implements OnMapReadyCallback {
         //Tinh tong gia
         txtPrice = findViewById(R.id.sumPrice);
 
-        txtPrice.setText(""+sumPrice());
+        txtPrice.setText("" + sumPrice());
         //thanh toan
+        raBtnCod = findViewById(R.id.paymentCod);
+        raBtnOnline = findViewById(R.id.paymentOnline);
+
+
 
         //dat hang
         btnOrder = findViewById(R.id.btnOrder);
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               try {
-                   orderDetailDB = new OrderDetailDB();
-                   orderDetailDB.insertContact(new OrderDetail("21","kk",20,1));
-                   noficeSuccess();
-               }catch (Exception e){
+                if (raBtnCod.isChecked()) {
+                    payment = "Cod";
+                }
+                if (raBtnOnline.isChecked()) {
+                    payment = "Online";
+                }
+                try {
+                    orderDetailDB = new OrderDetailDB();
+                    orderDetailDB.insertOrder(new Order("k", "123", "11-2-3", "12-3-2", "Đang xác nhận", "11-1-2", sumPrice(), payment,"231,233"));
+                    orderDetailDB.insertOrderDetail(new OrderDetail("kk", "21", "kk", 1), listItem);
+                    noficeSuccess();
+                } catch (Exception e) {
                     noficeFail();
-               }
+                }
 
             }
         });
-
 
 
         //list food
@@ -79,29 +99,35 @@ public class Infomation_order extends Activity implements OnMapReadyCallback {
         Custom_Adapter_list_infor adapter = new Custom_Adapter_list_infor(listItem, this);
         listView.setAdapter(adapter);
 
-        //map
-
-        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mymap);
-        mapFragment.getMapAsync(this);
         //event btn back
 //        btnBack.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                Intent intentBack = new Intent(Infomation_order.this,Cart.class);
+//                Intent intentBack = new Intent(Infomation_order.this, Cart.class);
 //                startActivity(intentBack);
 //            }
 //        });
+
+
+
+
+
+        //map
+
+        MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.mymap);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
-    public void onMapReady( GoogleMap googleMap) {
-        LatLng syd  = new LatLng(-33.867,151.206);
-        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(syd,13));
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng syd = new LatLng(-33.867, 151.206);
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(syd, 13));
         googleMap.addMarker(new MarkerOptions().title("cuong")
-        .snippet("cuong123")
+                .snippet("cuong123")
                 .position(syd)
         );
     }
+
     public void createListItemOrder() {
         listItem = new ArrayList<>();
         listItem.add(new ItemOfListOrder(1, "ăn", "https://img.wattpad.com/cover/123681914-256-k224486.jpg", "SG", 200, "20-02-2021"));
@@ -115,16 +141,16 @@ public class Infomation_order extends Activity implements OnMapReadyCallback {
     }
 
     //tinh tong tien
-    public int sumPrice(){
-        int sum =0;
-        for (int i=0 ;i<5;i++){
+    public int sumPrice() {
+        int sum = 0;
+        for (int i = 0; i < 5; i++) {
             sum += listItem.get(i).getPrice();
         }
         return sum;
     }
 
     //thong bao thanh cong
-    public void noficeSuccess(){
+    public void noficeSuccess() {
 
         AlertDialog.Builder b = new AlertDialog.Builder(this);
 
@@ -133,7 +159,7 @@ public class Infomation_order extends Activity implements OnMapReadyCallback {
 
         b.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Intent intentBack = new Intent(Infomation_order.this,MainActivity.class);
+                Intent intentBack = new Intent(Infomation_order.this, MainActivity.class);
                 startActivity(intentBack);
             }
         });
@@ -143,8 +169,9 @@ public class Infomation_order extends Activity implements OnMapReadyCallback {
 
         al.show();
     }
+
     //thong bao thanh cong
-    public void noficeFail(){
+    public void noficeFail() {
 
         AlertDialog.Builder b = new AlertDialog.Builder(this);
 
